@@ -14,11 +14,11 @@ import img1 from "./assets/wlc-1.jpeg";
 import img3 from "./assets/wlc-3.jpeg";
 import imgPrincess from "./assets/wlc-princess.jpeg";
 
-// 🔴 1. PASTE YOUR GOOGLE APPS SCRIPT URL HERE
+// GOOGLE APPS SCRIPT URL
 const SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbygE68eDmtGlFI9t5gdQjvFktq3SxvasMuZQfSK7M68R-lb66svqb8HoIpvL5Yvd6ac/exec";
 
-// 🟢 2. PASTE YOUR WHATSAPP GROUP LINK HERE
+// WHATSAPP GROUP LINK
 const WHATSAPP_LINK =
   "https://chat.whatsapp.com/D1WuGCMVnqFBL2xnbD8cEH?mode=gi_t";
 
@@ -332,9 +332,6 @@ const WLCWebsite = () => {
               WhatsApp
             </a>
           </div>
-        </div>
-        <div className="text-center mt-8 text-xs text-gray-600">
-          Privacy Note: Your data is safe with us.
         </div>
       </footer>
 
