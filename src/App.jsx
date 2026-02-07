@@ -125,7 +125,7 @@ const WLCWebsite = () => {
         <span className="text-sm font-bold tracking-wide text-pink-500 uppercase mb-4">
           Women's Leadership Council — AUN
         </span>
-        <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6">
           Grow your leadership.
           <br />
           Find your sisterhood.
