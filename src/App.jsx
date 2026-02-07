@@ -14,9 +14,13 @@ import img1 from "./assets/wlc-1.jpeg";
 import img3 from "./assets/wlc-3.jpeg";
 import imgPrincess from "./assets/wlc-princess.jpeg";
 
-// 🔴 PASTE YOUR GOOGLE APPS SCRIPT URL HERE
+// 🔴 1. PASTE YOUR GOOGLE APPS SCRIPT URL HERE
 const SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbygE68eDmtGlFI9t5gdQjvFktq3SxvasMuZQfSK7M68R-lb66svqb8HoIpvL5Yvd6ac/exec";
+
+// 🟢 2. PASTE YOUR WHATSAPP GROUP LINK HERE
+const WHATSAPP_LINK =
+  "https://chat.whatsapp.com/D1WuGCMVnqFBL2xnbD8cEH?mode=gi_t";
 
 const WLCWebsite = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -53,10 +57,15 @@ const WLCWebsite = () => {
         method: "POST",
         body: formData,
       });
+
       setSubmitStatus("success");
       form.reset();
-      // Optional: Redirect to WhatsApp after short delay
-      // setTimeout(() => window.location.href = "YOUR_WHATSAPP_LINK", 2000);
+
+      // 🟢 AUTO REDIRECT LOGIC
+      // Wait 1.5 seconds to show the "Success" message, then go to WhatsApp
+      setTimeout(() => {
+        window.location.href = WHATSAPP_LINK;
+      }, 1500);
     } catch (error) {
       console.error("Error!", error.message);
       setSubmitStatus("error");
@@ -316,7 +325,10 @@ const WLCWebsite = () => {
             <a href="#" className="text-gray-400 hover:text-white transition">
               Instagram
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition">
+            <a
+              href={WHATSAPP_LINK}
+              className="text-gray-400 hover:text-white transition"
+            >
               WhatsApp
             </a>
           </div>
@@ -352,13 +364,17 @@ const WLCWebsite = () => {
                     Welcome to the Club!
                   </h3>
                   <p className="text-gray-600 mb-6">
-                    You've successfully signed up.
+                    You've successfully signed up. Redirecting to WhatsApp...
                   </p>
+
+                  {/* 🟢 SUCCESS BUTTON LINKS TO WHATSAPP */}
                   <a
-                    href="#"
+                    href={WHATSAPP_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-6 py-3 bg-green-500 text-white rounded-lg font-bold hover:bg-green-600 transition"
                   >
-                    Join the WhatsApp Group
+                    Join WhatsApp Group
                   </a>
                 </div>
               ) : (
@@ -484,8 +500,12 @@ const WLCWebsite = () => {
                           "Submit & Join WhatsApp"
                         )}
                       </button>
+
+                      {/* 🟢 SECONDARY BUTTON LINKS TO WHATSAPP */}
                       <a
-                        href="#"
+                        href={WHATSAPP_LINK}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-full py-3 border border-green-500 text-green-600 rounded-lg font-bold hover:bg-green-50 transition text-center flex items-center justify-center gap-2"
                       >
                         Skip form & Join WhatsApp
